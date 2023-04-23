@@ -1,0 +1,49 @@
+body {
+  font-family: BlinkMacSystemFont , Oxygen , Ubuntu , Helvetica Neue , sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+}
+
+code {
+  font-family: source-code-pro , Menlo , Monaco , Consolas , Courier New , monospace;
+}
+
+.order-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: auto;
+  width: 90%;
+}
+
+.order-card {
+  background-color: white;
+  border: 1px solid #002347a6;
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.377);
+  color: #002347;
+  display: flex;
+  font-size: 20px;
+  justify-content: space-between;
+  margin: 5px;
+  max-width: 600px;
+  overflow-x: auto;
+  text-decoration: none;
+  white-space: nowrap;
+  width: 90%;
+}
+
+.order-card div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+  text-align: center;
+}
+
+.order-card div span:first-child {
+  color: #ff5003;
+  font-size: 18px;
+  font-weight: 900;
+}

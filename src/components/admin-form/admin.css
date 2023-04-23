@@ -1,0 +1,56 @@
+.adm-register-form {
+  align-items: center;
+  background-color: rgb(252, 252, 252);
+  border: 1px solid rgba(70, 70, 70, 0.452);
+  border-radius: 10px;
+  box-shadow: 0 0 5px  black;
+  display: flex;
+  flex-flow: column wrap;
+  margin: auto;
+  max-width: 1200px;
+  padding: 15px;
+  width: 90%;
+}
+
+.adm-register-form .adm-register-form-inputs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.adm-register-form-inputs label {
+  color: #002347;
+  display: flex;
+  flex-direction: column;
+  font-weight: 900;
+  padding: 10px;
+  width: 20%;
+}
+
+.adm-register-form-inputs label input, .adm-register-form-inputs label select {
+  border: 1px solid grey;
+  border-radius: 5px;
+  margin-top: 3px;
+  padding: 5px;
+}
+
+.adm-register-form button {
+  background-color: #036;
+  border: none;
+  border-radius: 10px;
+  bottom: 120px;
+  box-shadow: 1px 2px 5px rgba(17, 17, 17, 0.329);
+  color: white;
+  cursor: pointer;
+  font-size: 17px;
+  font-weight: 900;
+  height: 40px;
+  max-width: 800px;
+  padding: 5px;
+  width: 30%;
+}
+
+.adm-register-form button:hover {
+  background-color: rgb(0, 44, 88);
+}

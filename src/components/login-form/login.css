@@ -1,0 +1,223 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background-attachment: fixed;
+  background-color: #ff5003;
+  background-image: linear-gradient(43deg, #ff5003 0%, #ffa300 46%, #ffcc70 100%);
+  font-family: Verdana , Geneva , Tahoma , sans-serif;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.login-register-form {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+h1 {
+  color: white;
+  font-size: 40px;
+  letter-spacing: -2px;
+  margin-top: -10px;
+  padding: 20px 0 0;
+  text-shadow: 1px 2px #661f00;
+}
+
+p {
+  color: white;
+  font-weight: 600;
+}
+
+.donabirita {
+  background-color: #003f7d;
+}
+
+.inputs-container {
+  align-items: center;
+  background-color: #ff8e00;
+  border-radius: 20px;
+  box-shadow: 1px 2px 5px black;
+  display: flex;
+  flex-direction: column;
+  height: 600px;
+  justify-content: center;
+  margin: auto;
+  width: 400px;
+}
+
+.inputs-container a {
+  color: white;
+  text-decoration: none;
+}
+
+.inputs-container input {
+  border: none;
+  border-radius: 15px;
+  box-shadow: inset 0 0 3px #ff5003;
+  margin-top: 10px;
+  padding: 15px;
+  text-align: center;
+}
+
+.inputs-container label {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  text-shadow: 1px 1px #661f00;
+}
+
+.inputs-container button {
+  background-color: #003f7d;
+  border-radius: 7px;
+  border-style: none;
+  box-shadow: 1px 1px 2px black;
+  color: white;
+  font-family: -apple-system , Ubuntu , Open Sans , Helvetica Neue , sans-serif;
+  font-weight: 600;
+  margin: 25px 5px;
+  padding: 15px 25px;
+}
+
+.inputs-container button:hover {
+  background-color: #002347;
+  cursor: pointer;
+  transition: 100ms;
+}
+
+.inputs-container button:disabled {
+  background-color: #ffcc70;
+  cursor: not-allowed;
+  transition: 1s;
+}
+
+.inputs-container button:enabled {
+  transition: 1s;
+}
+
+.bubbles {
+  height: 100%;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 0;
+}
+
+.bubble {
+  animation: rise 10s infinite ease-in;
+  background: #f1f1f1;
+  border-radius: 50%;
+  bottom: -100px;
+  height: 40px;
+  opacity: 0.5;
+  position: absolute;
+  width: 40px;
+  z-index: -1;
+}
+
+.bubble:nth-child( 1 ) {
+  animation-duration: 8s;
+  height: 40px;
+  left: 10%;
+  width: 40px;
+}
+
+.bubble:nth-child( 2 ) {
+  animation-delay: 1s;
+  animation-duration: 5s;
+  height: 20px;
+  left: 20%;
+  width: 20px;
+}
+
+.bubble:nth-child( 3 ) {
+  animation-delay: 2s;
+  animation-duration: 7s;
+  height: 50px;
+  left: 35%;
+  width: 50px;
+}
+
+.bubble:nth-child( 4 ) {
+  animation-delay: 0s;
+  animation-duration: 11s;
+  height: 80px;
+  left: 50%;
+  width: 80px;
+}
+
+.bubble:nth-child( 5 ) {
+  animation-delay: 1s;
+  animation-duration: 6s;
+  height: 35px;
+  left: 55%;
+  width: 35px;
+}
+
+.bubble:nth-child( 6 ) {
+  animation-delay: 3s;
+  animation-duration: 8s;
+  height: 45px;
+  left: 65%;
+  width: 45px;
+}
+
+.bubble:nth-child( 7 ) {
+  animation-delay: 2s;
+  animation-duration: 12s;
+  height: 90px;
+  left: 70%;
+  width: 90px;
+}
+
+.bubble:nth-child( 8 ) {
+  animation-delay: 2s;
+  animation-duration: 6s;
+  height: 25px;
+  left: 80%;
+  width: 25px;
+}
+
+.bubble:nth-child( 9 ) {
+  animation-delay: 1s;
+  animation-duration: 5s;
+  height: 15px;
+  left: 70%;
+  width: 15px;
+}
+
+.bubble:nth-child( 10 ) {
+  animation-delay: 4s;
+  animation-duration: 5s;
+  height: 90px;
+  left: 25%;
+  width: 90px;
+}
+
+@keyframes rise {
+
+  0% {
+    bottom: -100px;
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translate(100px);
+  }
+
+  100% {
+    bottom: 1080px;
+    transform: translateX(-100px);
+  }
+}
