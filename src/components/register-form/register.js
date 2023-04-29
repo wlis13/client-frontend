@@ -30,7 +30,7 @@ function RegisterForm() {
   }, [name, email, password]);
 
   async function registerNewUser() {
-    const endpoint = 'http://localhost:3001/user/register';
+    const endpoint = 'https://client-backend-ivory.vercel.app/register';
     const creationResponse = await fetch(endpoint, {
       method: 'POST',
       mode: 'cors',
@@ -39,6 +39,9 @@ function RegisterForm() {
         'Content-Type': 'application/json',
       },
     });
+    const result = await creationResponse.json();
+    console.log(result);
+    localStorage.setItem('user', JSON.stringify(result));
     const CREATED_CODE = 201;
     if (creationResponse.status !== CREATED_CODE) {
       setShowError(true);

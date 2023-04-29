@@ -7,7 +7,7 @@ function SellerTable() {
   useEffect(() => {
     const { id } = JSON.parse(localStorage.getItem('user'));
     async function fetchOrders() {
-      const response = await fetch(`http://localhost:3001/customer/orders/${id}`, {
+      const response = await fetch(`https://client-backend-ivory.vercel.app/customer/orders/${id}`, {
         method: 'GET',
         mode: 'cors',
         headers: {

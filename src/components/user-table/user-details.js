@@ -27,7 +27,7 @@ function UserDetails() {
   useEffect(() => {
     const { id } = JSON.parse(localStorage.getItem('user'));
     async function fetchOrders() {
-      const response = await fetch(`http://localhost:3001/customer/orders/${id}`, {
+      const response = await fetch(`https://client-backend-ivory.vercel.app/customer/orders/${id}`, {
         method: 'GET',
         mode: 'cors',
         headers: {
@@ -46,7 +46,7 @@ function UserDetails() {
   useEffect(() => {
     async function findUserById() {
       if (getOrder.length > 0 && getOrder[0].sellerId) {
-        const response = await fetch(`http://localhost:3001/user/id/${getOrder[0].sellerId}`, {
+        const response = await fetch(`https://client-backend-ivory.vercel.app/user/id/${getOrder[0].sellerId}`, {
           method: 'GET',
           mode: 'cors',
           headers: {

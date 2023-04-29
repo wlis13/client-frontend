@@ -42,7 +42,7 @@ function LoginForm() {
   }
 
   async function handleClick() {
-    const endpoint = 'http://localhost:3001/user/login';
+    const endpoint = 'https://client-backend-ivory.vercel.app/user/login';
     const response = await fetch(endpoint, {
       method: 'POST',
       mode: 'cors',

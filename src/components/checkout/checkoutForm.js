@@ -15,7 +15,7 @@ function CheckoutForm() {
 
   useEffect(() => {
     async function getSellerList() {
-      const endpoint = 'http://localhost:3001/user/seller';
+      const endpoint = 'https://client-backend-ivory.vercel.app/user/seller';
 
       const response = await fetch(endpoint, {
         method: 'GET',
@@ -59,7 +59,7 @@ function CheckoutForm() {
   }
 
   async function registerSale() {
-    const endpoint = 'http://localhost:3001/sale';
+    const endpoint = 'https://client-backend-ivory.vercel.app/sale';
     const sale = makeSaleObj();
     const creationResponse = await fetch(endpoint, {
       method: 'POST',

@@ -27,7 +27,7 @@ function AdminForm() {
   async function handleSubmit(event) {
     event.preventDefault();
 
-    const endpoint = 'http://localhost:3001/admin/register';
+    const endpoint = 'https://client-backend-ivory.vercel.app/admin/register';
     const response = await fetch(endpoint, {
       method: 'POST',
       mode: 'cors',

@@ -24,7 +24,7 @@ function SellerDetails() {
 
   useEffect(() => {
     async function fetchOrders() {
-      const response = await fetch(`http://localhost:3001/product/${Number(getIdUrl)}`, {
+      const response = await fetch(`https://client-backend-ivory.vercel.app/product/${Number(getIdUrl)}`, {
         method: 'GET',
         mode: 'cors',
         headers: {
