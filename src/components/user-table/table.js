@@ -54,7 +54,7 @@ function UserTable() {
               <span
                 data-testid={ `customer_orders__element-order-date-${order.id}` }
               >
-                {order.saleDate
+                {order.sale_date
                   .toLocaleString().substr(0, SUBSTR).split('-').reverse()
                   .join('/') }
               </span>
@@ -64,7 +64,7 @@ function UserTable() {
               <span
                 data-testid={ `customer_orders__element-card-price-${order.id}` }
               >
-                {order.totalPrice.replace(/\./, ',')}
+                {order.total_price.replace(/\./, ',')}
               </span>
             </div>
           </Link>

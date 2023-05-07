@@ -14,7 +14,6 @@ function UserDetails() {
   const getUrl = history.location.pathname;
   const CARACTER_NUMBER = 17;
   const getIdUrl = getUrl.substring(CARACTER_NUMBER);
-
   const CARACTER_DATA = 10;
 
   function getLocalStorage() {
@@ -35,9 +34,10 @@ function UserDetails() {
         },
       });
       const data = await response.json();
-      const test = data.filter((iten) => iten.id === Number(getIdUrl));
-      setOrder(undefined);
-      setStatusSales(test[0].status);
+      console.log(data);
+      const test = data.find((iten) => iten.seller_id === Number(getIdUrl));
+      setOrder(data);
+      setStatusSales(test.status);
     }
     fetchOrders();
     getLocalStorage();
@@ -61,7 +61,7 @@ function UserDetails() {
   }, [getOrder, setOrder]);
 
   const dataTest = 'customer_order_details__element-order-details-label-delivery-status';
-
+  console.log(getOrder);
   return (
     <div className="improviso">
       <h1>Detalhes do produto</h1>
@@ -80,7 +80,7 @@ function UserDetails() {
           <p
             data-testid="customer_order_details__element-order-details-label-order-date"
           >
-            { getOrder[0].saleDate.substring(0, CARACTER_DATA)
+            { getOrder[0].sale_date.substring(0, CARACTER_DATA)
               .split('-').reverse().join('/') }
           </p>
           <p
@@ -98,7 +98,7 @@ function UserDetails() {
 
           </button>
           <p data-testid="customer_order_details__element-order-total-price">
-            {`Total: R$ ${getOrder[0].totalPrice.replace('.', ',')}`}
+            {`Total: R$ ${getOrder[0].total_price.toString().replace('.', ',')}`}
           </p>
         </div>
       )) : <img className="image-loading" src={ loading } alt="loading" />}

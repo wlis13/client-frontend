@@ -53,7 +53,8 @@ function LoginForm() {
     });
 
     const loginResponse = await response.json();
-    const { name, role, token } = loginResponse;
+    const { _doc } = loginResponse;
+    const { name, role, token } = _doc;
     const objectUserStorage = {
       name,
       email,
