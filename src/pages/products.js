@@ -22,7 +22,6 @@ function Product() {
         },
       });
       const productsList = await result.json();
-      console.log(productsList);
       setProducts(productsList);
     }
     fetchProduct();

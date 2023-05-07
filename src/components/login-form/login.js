@@ -55,15 +55,15 @@ function LoginForm() {
     const loginResponse = await response.json();
     const { _doc } = loginResponse;
     const { token } = loginResponse;
-    const { name, role } = _doc;
+    const { name, role, id } = _doc;
     const objectUserStorage = {
+      id,
       name,
       email,
       role,
       token,
     };
     localStorage.setItem('user', JSON.stringify(objectUserStorage));
-    console.log(token);
     if (loginResponse.message) {
       setShowError(true);
     } else {
