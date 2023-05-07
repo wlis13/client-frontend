@@ -1,6 +1,5 @@
-import { useEffect, useState, useContext } from 'react';
+import { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import Context from '../../context/Context';
 import './checkoutForm.css';
 
 function CheckoutForm() {
@@ -11,7 +10,6 @@ function CheckoutForm() {
     address: '',
     number: '',
   });
-  const { totalPrice } = useContext(Context);
 
   useEffect(() => {
     async function getSellerList() {
@@ -46,14 +44,14 @@ function CheckoutForm() {
     }, []);
 
     const sale = {
-      userId: user.id,
-      sellerId: selectedSellerId,
-      totalPrice,
-      deliveryAddress: form.address,
-      deliveryNumber: form.number,
+      user_id: user.id,
+      seller_id: selectedSellerId,
+      total_price: 0,
+      delivery_address: form.address,
+      delivery_number: form.number,
       status: 'Pendente',
       products,
-      saleDate: new Date().toISOString(),
+      sale_date: new Date().toISOString(),
     };
     return sale;
   }
