@@ -63,7 +63,7 @@ function LoginForm() {
       token,
     };
     localStorage.setItem('user', JSON.stringify(objectUserStorage));
-    console.log(loginResponse);
+    console.log(token);
     if (loginResponse.message) {
       setShowError(true);
     } else {
