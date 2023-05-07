@@ -13,7 +13,7 @@ function Product() {
 
   useEffect(() => {
     async function fetchProduct() {
-      const endpoint = 'http://localhost:3001/product/';
+      const endpoint = 'https://client-backend-ivory.vercel.app/products';
       const result = await fetch(endpoint, {
         method: 'GET',
         mode: 'cors',
@@ -22,6 +22,7 @@ function Product() {
         },
       });
       const productsList = await result.json();
+      console.log(productsList);
       setProducts(productsList);
     }
     fetchProduct();
@@ -41,7 +42,7 @@ function Product() {
       >
         <span>🛒 Total - R$: </span>
         <span data-testid="customer_products__checkout-bottom-value">
-          { `${totalPrice}`.replace('.', ',') }
+          { `${totalPrice}` }
         </span>
       </button>
       <div className="container-products">
@@ -51,7 +52,7 @@ function Product() {
               key={ product.id }
               id={ product.id }
               name={ product.name }
-              imag={ product.urlImage }
+              imag={ product.url_image }
               price={ product.price }
             />)) }
         </ul>

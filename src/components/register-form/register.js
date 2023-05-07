@@ -30,11 +30,10 @@ function RegisterForm() {
   }, [name, email, password]);
 
   async function registerNewUser() {
-    const endpoint = 'https://client-backend-ivory.vercel.app/register';
+    const endpoint = 'https://client-backend-ivory.vercel.app/register/user';
     const creationResponse = await fetch(endpoint, {
       method: 'POST',
-      mode: 'cors',
-      body: JSON.stringify({ email, password, name, role: 'customer' }),
+      body: JSON.stringify({ name, email, password, role: 'customer' }),
       headers: {
         'Content-Type': 'application/json',
       },

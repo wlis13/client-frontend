@@ -42,26 +42,33 @@ function LoginForm() {
   }
 
   async function handleClick() {
-    const endpoint = 'https://client-backend-ivory.vercel.app/user/login';
+    const endpoint = 'https://client-backend-ivory.vercel.app/login';
     const response = await fetch(endpoint, {
       method: 'POST',
-      mode: 'cors',
       body: JSON.stringify({ email, password }),
+      mode: 'cors',
       headers: {
         'Content-Type': 'application/json',
       },
     });
 
     const loginResponse = await response.json();
-
+    const { name, role, token } = loginResponse;
+    const objectUserStorage = {
+      name,
+      email,
+      role,
+      token,
+    };
+    localStorage.setItem('user', JSON.stringify(objectUserStorage));
+    console.log(loginResponse);
     if (loginResponse.message) {
       setShowError(true);
     } else {
-      localStorage.setItem('user', JSON.stringify(loginResponse));
       setUser(loginResponse);
       if (loginResponse.role === 'customer') {
         history.push('/customer/products');
-      } else if (loginResponse.role === 'administrator') {
+      } else if (loginResponse.role === 'admin') {
         history.push('/admin/manage');
       } else if (loginResponse.role === 'seller') {
         history.push('/customer/orders');

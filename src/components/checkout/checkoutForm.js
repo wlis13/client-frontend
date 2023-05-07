@@ -70,7 +70,8 @@ function CheckoutForm() {
         Authorization: JSON.parse(localStorage.getItem('user')).token,
       },
     });
-
+    const verifyResponse = await creationResponse.json();
+    console.log(verifyResponse);
     const CREATED_CODE = 201;
     if (creationResponse.status === CREATED_CODE) {
       const { id: saleId } = await creationResponse.json();
