@@ -64,6 +64,7 @@ function LoginForm() {
       token,
     };
     localStorage.setItem('user', JSON.stringify(objectUserStorage));
+    console.log(loginResponse);
     if (loginResponse.message) {
       setShowError(true);
     } else {
