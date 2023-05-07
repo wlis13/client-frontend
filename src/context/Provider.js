@@ -18,7 +18,7 @@ function Provider({ children }) {
   }
 
   async function handleStatus(status, id) {
-    await fetch(`http://localhost:3001/sale/${id}`, {
+    await fetch(`https://client-backend-ivory.vercel.app/sale/${id}`, {
       method: 'PATCH',
       mode: 'cors',
       headers: {

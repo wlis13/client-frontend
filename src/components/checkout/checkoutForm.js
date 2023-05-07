@@ -37,6 +37,7 @@ function CheckoutForm() {
   function makeSaleObj() {
     const cart = JSON.parse(localStorage.getItem('cart'));
     const user = JSON.parse(localStorage.getItem('user'));
+    const totalPrice = cart.reduce((acc, curr) => acc + curr.subTotal, 0);
 
     const products = cart.reduce((acc, curr) => {
       const { productId, quantity } = curr;
@@ -46,7 +47,7 @@ function CheckoutForm() {
     const sale = {
       user_id: user.id,
       seller_id: selectedSellerId,
-      total_price: 0,
+      total_price: totalPrice,
       delivery_address: form.address,
       delivery_number: form.number,
       status: 'Pendente',
@@ -57,7 +58,7 @@ function CheckoutForm() {
   }
 
   async function registerSale() {
-    const endpoint = 'https://client-backend-ivory.vercel.app/sale';
+    const endpoint = 'https://client-backend-ivory.vercel.app/register/sale';
     const sale = makeSaleObj();
     const creationResponse = await fetch(endpoint, {
       method: 'POST',
@@ -72,8 +73,7 @@ function CheckoutForm() {
     console.log(verifyResponse);
     const CREATED_CODE = 201;
     if (creationResponse.status === CREATED_CODE) {
-      const { id: saleId } = await creationResponse.json();
-      history.push(`/customer/orders/${saleId}`);
+      history.push(`/customer/orders/${verifyResponse.seller_id}`);
     }
   }
 
